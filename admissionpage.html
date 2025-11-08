@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - [School Name]</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .admission-process {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .requirement-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .requirement-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .form-link {
+            display: block;
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 2rem 0;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .form-link:hover {
+            background-color: #1a252f;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background-color: #ecf0f1;
+            padding: 2rem;
+            border-radius: 5px;
+            margin: 2rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #3498db;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>[School Name]</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./schoolwebsitetem.html">Home</a></li>
+                    <li><a href="./schoolaboutpag.html">About</a></li>
+                    <li><a href="./academicpag.html">Academics</a></li>
+                    <li><a href="./admissionpage.html">Admissions</a></li>
+                    <li><a href="./evenpage.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Admissions Process</h2>
+        <p>Join our community of learners and achievers</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">Why Choose [School Name]?</h2>
+            <div class="highlight-box">
+                <p>[School Name] provides an exceptional educational experience grounded in academic rigor, character development, and community engagement. We welcome families seeking a challenging yet supportive environment where students thrive intellectually and personally.</p>
+            </div>
+
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h3>Academic Excellence</h3>
+                    <p>Ranked among the top schools in the district, our rigorous curriculum prepares students for college and career success with dedicated faculty and small class sizes.</p>
+                </div>
+                <div class="requirement-card">
+                    <h3>Extracurricular Opportunities</h3>
+                    <p>From award-winning athletics to robotics club, debate team to drama productions, we offer over 30 clubs and organizations for student involvement.</p>
+                </div>
+                <div class="requirement-card">
+                    <h3>Supportive Community</h3>
+                    <p>Our close-knit community fosters collaboration between students, parents, and faculty to ensure every child feels valued and supported.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Admission Process</h2>
+            <div class="admission-process">
+                <div class="process-step">
+                    <span class="step-number">1</span><h3>Application Submission</h3>
+                    <p>Complete and submit the online application form along with required documentation including transcripts, test scores, and recommendation letters.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">2</span><h3>Interview & Assessment</h3>
+                    <p>Schedule an interview with our admissions team and complete any required assessments appropriate for your grade level.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">3</span><h3>Decision Notification</h3>
+                    <p>Receive admission decision within two weeks of completed application. Accepted students will receive enrollment information.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">4</span><h3>Enrollment Confirmation</h3>
+                    <p>Submit enrollment forms and tuition deposit (if applicable) to secure your place in the upcoming school year.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Grade Level Requirements</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h3>Kindergarten (Age 5 by September 1)</h3>
+                    <ul style="padding-left: 1.5rem; margin-top: 1rem;">
+                        <li>Birth certificate</li>
+                        <li>Immunization records</li>
+                        <li>Physical examination form</li>
+                        <li>Recent photo</li>
+                        <li>Preschool evaluation (if available)</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h3>Grades 1-8</h3>
+                    <ul style="padding-left: 1.5rem; margin-top: 1rem;">
+                        <li>Completed application form</li>
+                        <li>Current school transcripts</li>
+                        <li>Standardized test scores</li>
+                        <li>Teacher recommendations</li>
+                        <li>Birth certificate and immunization records</li>
+                    </ul>
+                </div>
+                <div class="requirement-card">
+                    <h3>Grades 9-12</h3>
+                    <ul style="padding-left: 1.5rem; margin-top: 1rem;">
+                        <li>Completed application form</li>
+                        <li>Official transcripts from previous schools</li>
+                        <li>Standardized test scores (SAT/ACT for 11th/12th grade)</li>
+                        <li>Teacher and counselor recommendations</li>
+                        <li>Personal essay</li>
+                        <li>Extracurricular activity list</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <a href="#" class="form-link">Download Application Form (PDF)</a>
+
+        <section>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">What is the application deadline?</div>
+                <div class="faq-answer">Applications for the following school year are accepted beginning October 1st. Priority deadline is January 15th, with rolling admissions continuing until all spaces are filled.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is there a tuition fee?</div>
+                <div class="faq-answer">As a public school, [School Name] does not charge tuition. However, fees for certain programs, materials, and activities may apply.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you offer financial aid?</div>
+                <div class="faq-answer">While we don't offer traditional financial aid, we work with families to ensure that no qualified student is unable to attend due to financial constraints. Payment plans are available.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What if my child has special needs?</div>
+                <div class="faq-answer">We have robust special education and support services. Please indicate any special requirements on your application so we can discuss appropriate accommodations during the interview process.</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Education Lane<br>
+                City, State 12345</p>
+                <p>Email: info@school.edu<br>
+                Phone: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Academic Programs</a></li>
+                    <li><a href="#">Athletics</a></li>
+                    <li><a href="#">Arts & Activities</a></li>
+                    <li><a href="#">Transportation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Staff Directory</a></li>
+                    <li><a href="#">School Policy</a></li>
+                    <li><a href="#">Employment</a></li>
+                    <li><a href="#">Alumni</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 [School Name]. All Rights Reserved.</p>
+            <p>&copy; Desing by Frank Francis.</p>
+        </div>
+    </footer>
+</body>
+</html>
